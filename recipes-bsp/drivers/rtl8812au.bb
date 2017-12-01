@@ -1,10 +1,10 @@
 SUMMARY = "RTL8812AU kernel driver (wifi)"
-DESCRIPTION = "RTL8812AU kernel driver"
+DESCRIPTION = "RTL8812AU kernel driver, derived from Realtek's 5.11 version of the driver"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://Kconfig;md5=e6402a1e8edc484c8a4cd7d18753fb5f"
+LIC_FILES_CHKSUM = "file://Kconfig;md5=4b85004ff83dd932ff28f7f348fb2a28"
 
-SRC_URI = "git://github.com/gnab/rtl8812au.git;protocol=https"
-SRCREV = "3e450d16d9c3e730c67b2a541520e85f664fd101"
+SRC_URI = "git://github.com/xxNull-lsk/rtl8812AU.git;protocol=https"
+SRCREV = "a89687e60c3fe7db5eb82e67117085f7dc94e3d0"
 
 S = "${WORKDIR}/git"
 
