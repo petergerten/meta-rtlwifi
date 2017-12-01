@@ -1,10 +1,10 @@
 SUMMARY = "RTL8812AU kernel driver (wifi)"
 DESCRIPTION = "RTL8812AU kernel driver"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://Kconfig;md5=4b85004ff83dd932ff28f7f348fb2a28"
+LIC_FILES_CHKSUM = "file://Kconfig;md5=e6402a1e8edc484c8a4cd7d18753fb5f"
 
-SRC_URI = "git://github.com/EmbeddedAndroid/rtl8812AU_8821AU_linux.git;protocol=https"
-SRCREV = "d1f7e7a3675c5895d9eb00f5b303e350fdccc0b2"
+SRC_URI = "git://github.com/gnab/rtl8812au.git;protocol=https"
+SRCREV = "3e450d16d9c3e730c67b2a541520e85f664fd101"
 
 S = "${WORKDIR}/git"
 
