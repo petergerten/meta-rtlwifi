@@ -1,0 +1,24 @@
+From 61d135e559c5004ec41e2b3a98d39724cca94509 Mon Sep 17 00:00:00 2001
+From: Frank Earl <frank@earlconsult.com>
+Date: Sun, 3 Dec 2017 21:20:37 -0500
+Subject: Corrected a buglet for OE builds...
+
+Commented out Date/Time macros for clean build.
+
+diff --git a/core/rtw_debug.c b/core/rtw_debug.c
+index 0f985a5..dc7302f 100644
+--- a/core/rtw_debug.c
++++ b/core/rtw_debug.c
+@@ -47,7 +47,11 @@ const char *rtw_log_level_str[] = {
+ void dump_drv_version(void *sel)
+ {
+ 	RTW_PRINT_SEL(sel, "%s %s\n", DRV_NAME, DRIVERVERSION);
+-	RTW_PRINT_SEL(sel, "build time: %s %s\n", __DATE__, __TIME__);
++	/* Can't do this within an OE Build...and it doesn't help much anyhow...
++           as an observation, it's only useful if you're in the middle of debug
++           and can't keep track of what build you're working on with a firmware
++           image...*/
++	/* RTW_PRINT_SEL(sel, "build time: %s %s\n", __DATE__, __TIME__); */
+ }
+ 
+ void dump_drv_cfg(void *sel)
