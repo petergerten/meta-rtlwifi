@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://Kconfig;md5=34aaf4b07dc17a22fa2b1912ef8ce76a"
 SRC_URI = "git://github.com/aircrack-ng/rtl8812au;protocol=https;branch=v5.1.5 \
 	  "
 
-SRCREV = "aa590f367d3d6fd6322478e02680cc82356c4b2e"
+SRCREV = "5a5da0ffe33d41fbce9dfd2adda47bda05ee9fdf"
 
 S = "${WORKDIR}/git"
 
