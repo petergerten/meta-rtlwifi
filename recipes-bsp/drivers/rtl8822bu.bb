@@ -4,18 +4,19 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://Kconfig;md5=e71d544fd90fb1393f4f62c4faea6384"
 
 SRC_URI = "git://github.com/madscientist42/rtl8822bu.git;protocol=https"
-SRCREV = "f0f86d18774c60f8ba02d54753c158c42431f622"
+SRCREV = "0a23e6067f36da250686ecd775a2e97d9854d31c"
 
 S = "${WORKDIR}/git"
 
 PV = "1.0-git"
 
-DEPENDS = "virtual/kernel"
+# Force the kernel source workdir to BE there...
+DEPENDS = "kernel-devsrc"
+do_install[depends] += "virtual/kernel:do_shared_workdir"
 
 inherit module
 
-EXTRA_OEMAKE  = "ARCH=${ARCH}"
-EXTRA_OEMAKE += "KSRC=${STAGING_KERNEL_BUILDDIR}"
+EXTRA_OEMAKE += " ARCH=${ARCH} KSRC=${STAGING_KERNEL_BUILDDIR}"
 
 do_compile () {
     unset LDFLAGS
