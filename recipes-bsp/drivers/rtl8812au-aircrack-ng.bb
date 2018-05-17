@@ -12,12 +12,13 @@ S = "${WORKDIR}/git"
 
 PV = "5.1.5-aircrack-ng-git+${SRCREV}"
 
-DEPENDS = "virtual/kernel"
+# Force the kernel source workdir to BE there...
+DEPENDS = "kernel-devsrc"
+do_install[depends] += "virtual/kernel:do_shared_workdir"
 
 inherit module
 
-EXTRA_OEMAKE  = "ARCH=${ARCH}"
-EXTRA_OEMAKE += "KSRC=${STAGING_KERNEL_BUILDDIR}"
+EXTRA_OEMAKE += " ARCH=${ARCH} KSRC=${STAGING_KERNEL_BUILDDIR}"
 
 do_compile () {
     unset LDFLAGS

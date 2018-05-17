@@ -1,7 +1,7 @@
 SUMMARY = "RTL8822BU kernel driver (wifi)"
 DESCRIPTION = "RTL8822BU kernel driver"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://Kconfig;md5=e71d544fd90fb1393f4f62c4faea6384"
+LIC_FILES_CHKSUM = "file://Kconfig;md5=12b95123fbe5dd02b8418463efdc6232"
 
 DEPENDS = "virtual/kernel"
 
@@ -12,11 +12,13 @@ S = "${WORKDIR}/git"
 
 PV = "1.0-git"
 
-DEPENDS = "virtual/kernel"
+# Force the kernel source workdir to BE there...
+DEPENDS = "kernel-devsrc"
+do_install[depends] += "virtual/kernel:do_shared_workdir"
 
 inherit module
 
-EXTRA_OEMAKE  = "ARCH=${ARCH} KSRC=${}"
+EXTRA_OEMAKE += " ARCH=${ARCH} KSRC=${STAGING_KERNEL_BUILDDIR}"
 
 do_compile () {
     unset LDFLAGS

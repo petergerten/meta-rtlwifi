@@ -13,7 +13,9 @@ S = "${WORKDIR}/git"
 
 PV = "5.2.9-git+${SRCREV}"
 
-DEPENDS = "virtual/kernel"
+# Force the kernel source workdir to BE there...
+DEPENDS = "kernel-devsrc"
+do_install[depends] += "virtual/kernel:do_shared_workdir"
 
 inherit module
 
