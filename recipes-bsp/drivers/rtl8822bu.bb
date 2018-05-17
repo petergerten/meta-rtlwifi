@@ -10,21 +10,10 @@ S = "${WORKDIR}/git"
 
 PV = "1.0-git"
 
-# Force the kernel source workdir to BE there...
-DEPENDS = "kernel-devsrc"
-do_install[depends] += "virtual/kernel:do_shared_workdir"
+MODULE_NAME = "88x2bu.ko"
+
+require realtek.inc
 
 inherit module
 
-EXTRA_OEMAKE += " ARCH=${ARCH} KSRC=${STAGING_KERNEL_BUILDDIR}"
-
-do_compile () {
-    unset LDFLAGS
-    oe_runmake
-}
-
-do_install () {
-    install -d ${D}/lib/modules/${KERNEL_VERSION}
-    install -m 0755 ${B}/8822bu.ko ${D}/lib/modules/${KERNEL_VERSION}/8822bu.ko
-}
 
