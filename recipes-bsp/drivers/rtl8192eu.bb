@@ -8,22 +8,10 @@ SRCREV = "49a0fb502023d0f905404d0d18f7e4df65327f75"
 
 S = "${WORKDIR}/git"
 
-PV = "1.0-git"
+MODVER = "1.0"
 
-DEPENDS = "virtual/kernel"
+MODULE_NAME = "8192eu.ko"
 
-inherit module
+require realtek.inc
 
-EXTRA_OEMAKE  = "ARCH=${ARCH}"
-EXTRA_OEMAKE += "KSRC=${STAGING_KERNEL_BUILDDIR}"
-
-do_compile () {
-    unset LDFLAGS
-    oe_runmake
-}
-
-do_install () {
-    install -d ${D}/lib/modules/${KERNEL_VERSION}
-    install -m 0755 ${B}/8192eu.ko ${D}/lib/modules/${KERNEL_VERSION}/8192eu.ko
-}
 

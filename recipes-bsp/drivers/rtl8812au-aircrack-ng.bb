@@ -10,7 +10,7 @@ SRCREV = "5a5da0ffe33d41fbce9dfd2adda47bda05ee9fdf"
 
 S = "${WORKDIR}/git"
 
-PV = "5.1.5-aircrack-ng-git+${SRCREV}"
+MODVER = "5.1.5"
 
 MODULE_NAME = "8812au.ko"
 

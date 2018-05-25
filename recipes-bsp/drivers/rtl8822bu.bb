@@ -8,7 +8,7 @@ SRCREV = "0a23e6067f36da250686ecd775a2e97d9854d31c"
 
 S = "${WORKDIR}/git"
 
-PV = "1.0-git"
+MODVER = "5.2.4"
 
 MODULE_NAME = "88x2bu.ko"
 

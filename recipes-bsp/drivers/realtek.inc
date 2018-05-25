@@ -2,16 +2,19 @@
 
 S = "${WORKDIR}/git"
 
-
-# Force the kernel source workdir to BE there...
-DEPENDS = "virtual/kernel kernel-devsrc"
-do_install[depends] += "virtual/kernel:do_shared_workdir"
+# Consistent package versioning rules...
+PV = "${MODVER}-git+${SRCREV}"
 
 inherit module
 
-EXTRA_OEMAKE += " ARCH=${ARCH} KSRC=${STAGING_KERNEL_BUILDDIR}"
+# Force the kernel source workdir to BE there...
+do_compile[depends] += "virtual/kernel:do_shared_workdir" 
+
+EXTRA_OEMAKE += " ARCH=${ARCH} KSRC=${STAGING_KERNEL_DIR}"
 
 do_compile () {
+    # Force the additional LDFLAGS as they break things on some targets and
+    # weren't overly helpful...
     unset LDFLAGS
     oe_runmake
 }

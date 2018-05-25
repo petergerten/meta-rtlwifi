@@ -11,7 +11,7 @@ SRCREV = "601ccd117168c37ff93daecab75ed9581d412371"
 
 S = "${WORKDIR}/git"
 
-PV = "5.2.9-git+${SRCREV}"
+MODVER = "5.2.9"
 
 MODULE_NAME = "8812au.ko"
 
