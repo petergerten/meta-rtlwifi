@@ -1,0 +1,28 @@
+From a0f9f117d76aa51b011c762f6470680becc551c0 Mon Sep 17 00:00:00 2001
+From: Frank Earl <frank@earlconsult.com>
+Date: Wed, 20 Jun 2018 22:03:37 -0400
+Subject: Commented out item that doesn't work...
+
+Relies on a few things- doesn't throw errors otherwise, so rather than
+have it trying for commands that may/may not be on host and this doesn't
+seem to matter, we're commenting them out.
+
+diff --git a/Makefile b/Makefile
+index 925c127..bf3236d 100755
+--- a/Makefile
++++ b/Makefile
+@@ -17,10 +17,10 @@ EXTRA_CFLAGS += -Wno-date-time
+ EXTRA_CFLAGS += -Wno-misleading-indentation
+ EXTRA_CFLAGS += -Wno-uninitialized
+ 
+-GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
+-ifeq ($(GCC_VER_49),1)
+-EXTRA_CFLAGS += -Wno-date-time	# Fix compile error && warning on gcc 4.9 and later
+-endif
++#GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
++#ifeq ($(GCC_VER_49),1)
++#EXTRA_CFLAGS += -Wno-date-time	# Fix compile error && warning on gcc 4.9 and later
++#endif
+ 
+ # Relax some warnings from '-Wextra' so we won't get flooded with warnings
+ EXTRA_CFLAGS += -Wno-sign-compare

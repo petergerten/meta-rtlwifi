@@ -3,7 +3,10 @@ DESCRIPTION = "RTL8822BU kernel driver"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://Kconfig;md5=e71d544fd90fb1393f4f62c4faea6384"
 
-SRC_URI = "git://github.com/madscientist42/rtl8822bu.git;protocol=https"
+SRC_URI = " \
+	git://github.com/madscientist42/rtl8822bu.git;protocol=https \
+	file://00001-makefile.patch \
+	"
 SRCREV = "0a23e6067f36da250686ecd775a2e97d9854d31c"
 
 S = "${WORKDIR}/git"

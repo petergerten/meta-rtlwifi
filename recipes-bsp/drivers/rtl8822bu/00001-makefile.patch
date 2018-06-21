@@ -1,0 +1,27 @@
+From 0e858ea954238431c5797f3e25dec66ee49803db Mon Sep 17 00:00:00 2001
+From: Frank Earl <frank@earlconsult.com>
+Date: Thu, 21 Jun 2018 07:21:20 -0400
+Subject: Closing out irrelevant entries in make
+
+This does something that steps out of the sandbox- but is not
+relevant to our build environment...  Closing it off..
+
+diff --git a/Makefile b/Makefile
+index 2996eaf..67307ec 100644
+--- a/Makefile
++++ b/Makefile
+@@ -15,10 +15,10 @@ EXTRA_CFLAGS += -Wno-unused-function
+ EXTRA_CFLAGS += -Wno-unused
+ #EXTRA_CFLAGS += -Wno-uninitialized
+ 
+-GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
+-ifeq ($(GCC_VER_49),1)
+-EXTRA_CFLAGS += -Wno-date-time	# Fix compile error && warning on gcc 4.9 and later
+-endif
++#GCC_VER_49 := $(shell echo `$(CC) -dumpversion | cut -f1-2 -d.` \>= 4.9 | bc )
++#ifeq ($(GCC_VER_49),1)
++#EXTRA_CFLAGS += -Wno-date-time	# Fix compile error && warning on gcc 4.9 and later
++#endif
+ 
+ EXTRA_CFLAGS += -I$(src)/include
+ 
