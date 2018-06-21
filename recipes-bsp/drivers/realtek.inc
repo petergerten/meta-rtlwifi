@@ -16,11 +16,11 @@ EXTRA_OEMAKE += " ARCH=${ARCH} KSRC=${STAGING_KERNEL_DIR} MODDESTDIR=${D}${nonar
 # Override the modules install target...
 MODULES_INSTALL_TARGET = "install"
 
-# Stage in some directory pathing at the initial phase of the install task so that the module.bbclass
-# can do things "right" with the above declarations...
-do_install_prepend() {
+# Override the modules.bbclass install phase.  It does it wrong with everything on serveral fronts.
+do_install() {
 	install -d ${D}${nonarch_base_libdir}/
 	install -d ${D}${nonarch_base_libdir}/modules
 	install -d ${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}
+	install -m 0755 ${B}/${MODULE_NAME} ${D}/lib/modules/${KERNEL_VERSION}/${MODULE_NAME}
 }
 
