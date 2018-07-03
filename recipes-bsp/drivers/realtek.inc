@@ -7,8 +7,10 @@ PV = "${MODVER}-git+${SRCREV}"
 
 inherit module
 
-# Force the kernel source workdir to BE there...
-do_compile[depends] += "virtual/kernel:do_shared_workdir" 
+# Force the kernel source workdir to BE there and configured right
+# (Some kernels don't propagate the right shared workdir info for build
+#  until after the do_compile_kernelmodules completes...)
+do_compile[depends] += "virtual/kernel:do_compile_kernelmodules" 
 
 # Pass a few extra envvars in...
 EXTRA_OEMAKE += " ARCH=${ARCH} KSRC=${STAGING_KERNEL_DIR} MODDESTDIR=${D}${nonarch_base_libdir}/modules/${KERNEL_VERSION}"
