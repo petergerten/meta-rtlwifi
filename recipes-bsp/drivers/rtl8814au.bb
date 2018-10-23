@@ -1,5 +1,5 @@
-SUMMARY = "RTL8822BU kernel driver (wifi)"
-DESCRIPTION = "RTL8822BU kernel driver"
+SUMMARY = "RTL8814AU kernel driver (wifi)"
+DESCRIPTION = "RTL8814AU kernel driver"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://Kconfig;md5=12b95123fbe5dd02b8418463efdc6232"
 
