@@ -1,7 +1,7 @@
 SUMMARY = "RTL8812AU kernel driver (AirCrack-NG version)"
 DESCRIPTION = "RTL8812AU kernel driver, derived from Realtek's 5.1.5 version of the driver, with monitor mode and packet injection"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://Kconfig;md5=34aaf4b07dc17a22fa2b1912ef8ce76a"
+LIC_FILES_CHKSUM = "file://Kconfig;md5=f578868eaaf4f81f794a03a4f599980b"
 EXTRA_OEMAKE += "CFLAGS='-Werror=incompatible-pointer-types'"
 
 SRC_URI = " \
