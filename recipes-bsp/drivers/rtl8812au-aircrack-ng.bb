@@ -12,8 +12,8 @@ SRCREV = "19132e290f8766c8a31296454f2abc70dfbe5215"
 
 S = "${WORKDIR}/git"
 
-MODVER = "5.1.5"
+MODVER = "5.3.4"
 
-MODULE_NAME = "8812au.ko"
+MODULE_NAME = "88XXau.ko"
 
 require realtek.inc
