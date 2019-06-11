@@ -6,7 +6,6 @@ EXTRA_OEMAKE += "CFLAGS='-Werror=incompatible-pointer-types'"
 
 SRC_URI = " \
 	git://github.com/aircrack-ng/rtl8812au;protocol=https;branch=v5.3.4 \
-	file://00001-makefile.patch \
 	"
 
 SRCREV = "19132e290f8766c8a31296454f2abc70dfbe5215"
