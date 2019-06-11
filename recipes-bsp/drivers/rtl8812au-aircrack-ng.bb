@@ -5,11 +5,11 @@ LIC_FILES_CHKSUM = "file://Kconfig;md5=34aaf4b07dc17a22fa2b1912ef8ce76a"
 EXTRA_OEMAKE += "CFLAGS='-Werror=incompatible-pointer-types'"
 
 SRC_URI = " \
-	git://github.com/aircrack-ng/rtl8812au;protocol=https;branch=v5.1.5 \
+	git://github.com/aircrack-ng/rtl8812au;protocol=https;branch=v5.3.4 \
 	file://00001-makefile.patch \
 	"
 
-SRCREV = "5a5da0ffe33d41fbce9dfd2adda47bda05ee9fdf"
+SRCREV = "19132e290f8766c8a31296454f2abc70dfbe5215"
 
 S = "${WORKDIR}/git"
 
