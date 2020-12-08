@@ -5,14 +5,14 @@ LIC_FILES_CHKSUM = "file://Kconfig;md5=f578868eaaf4f81f794a03a4f599980b"
 EXTRA_OEMAKE += "CFLAGS='-Werror=incompatible-pointer-types'"
 
 SRC_URI = " \
-	git://github.com/aircrack-ng/rtl8812au;protocol=https;branch=v5.3.4 \
+	git://github.com/aircrack-ng/rtl8812au;protocol=https;branch=v5.6.4.2 \
 	"
 
 SRCREV = "e9fbf5c051453941bbc029810b893a6c010714e6"
 
 S = "${WORKDIR}/git"
 
-MODVER = "5.3.4"
+MODVER = "5.6.4.2"
 
 MODULE_NAME = "88XXau.ko"
 
