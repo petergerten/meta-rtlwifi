@@ -8,7 +8,7 @@ SRC_URI = " \
 	git://github.com/aircrack-ng/rtl8812au;protocol=https;branch=v5.6.4.2 \
 	"
 
-SRCREV = "e9fbf5c051453941bbc029810b893a6c010714e6"
+SRCREV = "b65dcf4105641716d16f3a6c96507fdd9c1862b4"
 
 S = "${WORKDIR}/git"
 
